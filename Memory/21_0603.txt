@@ -1,0 +1,89 @@
+* やった事
+ruby 学習　
+
+・MVC 
+・scafoldから読み解く
+・クラスの継承
+・Bootstrap導入
+・リクエストパラメーター
+
+*メモ
+
+require "./~.rb" ---他のファイルを読み込む。
+
+attr-accesser :name  ---機械的なコードを描かなくてよくなる。
+
+routes.rb -- root to "~#index"
+"/"にアクセス
+
+intializeメソッド---------------------------
+
+                |->引数　　(new)に対応する
+def initialize(name, address, email)
+    @name = name
+    @address = address
+    @email = email
+end
+user = User.new("shimizu", "tokyo", "nill")
+---------------------------------------------
+
+・クラスの継承
+    親クラス（スーパークラス）
+    子クラス---親クラスのメソッドが使える
+    例）class User < Main
+
+・railsのMVC
+    model--データとデータに関わるビジネスロジックをオブジェクトとした。
+    view--HTMLなどのHTTPレスポンスの中身を組み立てる。
+    controller--ブラウザなどのクライアントからのリクエストを受けて、適切なレスポンスを作成する制御を行う。
+------------------------------------------------------
+リクエスト＝＞           ＝＞ model ＜＝＞　データベース
+            controller
+レスポンス＜＝           ＝＞ view
+------------------------------------------------------
+
+    controller層--ブラウザから発行されたHTTPリクエストの宛先となっているURLやGet ,Postといったhttpメソッドを元に「リクエスト処理する箇所を特定する」
+    ｜ー＞routes.rb
+    *どのクラスのどのアクションで処理するか特定する。
+
+・scaffoldから読み解く
+    １、クライアントからリクエストはwebサーバーを介してrailsアプリへ
+    ２、ルーディングがリクエスト処理
+    ３、アクショ、必要に応じてモデルを利用。(indexアクションは全ユーザーデーターをuserクラスから取得)
+    ４、モデル　データベースの書き込みや読み出し。(indexの場合全レコードを読み出す。)
+    ５、アクションごとに対応するビューを生成
+    ６、コントローラがレスポンスを作成しwebサーバーを介してクライアントへ
+
+・Bootstrapの導入
+    1,gem "bootstrap"
+    2,bundle install
+    3,application.cssにする
+    ＠import "bootstrap";
+    4, application.js に記述
+
+・リクエストパラメーター
+    Post　ーform要素をsubmitで送る。
+    Get
+
+ーーーーーーーーーーーーーーーーーーーーーーーー
+def new
+    @task = Task.new #オブジェクトを作る
+end
+ーーーーーーーーーー
+def create
+    task = Task.new(task_params)　＃ストロングパラメーターを使ってオブジェクト作成
+    task.save　　　＃データベースに保存
+    redirect_to ~~~~~~~~
+end
+ーーーーーーーーーー
+private
+def task_params
+    params.require(:task).permit(:name)  #{task:{ ~~~~ }}
+end
+ーーーーーーーーーーーーーーーーーーーーーーーー
+
+redirect_to #リクエストし直す　　*flashメッセージ使える。
+render
+
+
+
