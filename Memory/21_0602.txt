@@ -1,0 +1,52 @@
+2021.0602
+やったこと
+Paiza ruby
+ruby じゃんけんプログラム
+
+メモ
+rand(1..5)
+.to_i 整数に
+.to_s 小数点つきに
+
+getsメソッド　標準出力
+gets.chomp.split(" , ") 配列に
+
+roop処理
+-for i in 1..5
+end
+-while 条件式　i<10
+end
+-eachメソッド
+
+charsメソッド　11 -> "1","1"
+mapメソッド　ある配列を別の配列に割り当てる。
+
+a = []
+b = [1,2]
+配列に入れる
+a.push(b)
+a = [1,2]
+```ruby
+ def hand(cpu_hand, player_hand)
+    if cpu_hand == "g"
+        puts "CPU...グー！"
+    elsif cpu_hand == "c"
+        puts "CPU...チョキ"
+    elsif cpu_hand == "p"
+        puts "CPU...パー"
+    else
+    end
+    if player_hand == "g"
+        puts "あなた...グー！"
+    elsif player_hand == "c"
+        puts "あなた...チョキ"
+    elsif player_hand == "p"
+        puts "あなた...パー"
+    else
+    end
+    ```
+    * hand(cpu_hand, player_hand)
+    このようにして、メソッドで定義したものを取り出す。
+    ＊　(cpu_hand, player_hand)
+        引数に代入されたものによって取り出される。
+
