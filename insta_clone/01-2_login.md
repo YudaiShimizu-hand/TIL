@@ -88,3 +88,8 @@ $redis-cli
 # 以下省略
 
 ```
+https://ccbaxy.xyz/blog/2020/06/21/ruby47/
+https://qiita.com/kenkentarou/items/d4b524766a9c0dee23bf
+https://www.ninton.co.jp/archives/4275
+https://qiita.com/Kta-M/items/b4852c849d408e7445c6
+https://qiita.com/keitah/items/61f5308424957257017e
