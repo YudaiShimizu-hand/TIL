@@ -62,11 +62,11 @@ $ rubocop --lint( または rubocop --rails )
 # 3 Metrics (クラスの行数や1行の文字数などに関して)
 # 4 Rails   (Rails特有のcop)
 
-$ rubocop --auto-gen-config 
+$ rubocop --auto-gen-config
 # .rubocop_todo.ymlに警告を一旦退避する。
 # .rubocop.ymlに "inherit_from: .rubocop_todo.yml" と書くのを忘れないでください。
 
-$ rubocop --auto-correct 
+$ rubocop --auto-correct
 ```
 
 rubocop.yml.zip
@@ -255,6 +255,3 @@ $bundle
 ```
 binfing.pry
 pry-byebugと使うのがいい？
-
-
-

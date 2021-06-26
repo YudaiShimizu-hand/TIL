@@ -1,7 +1,6 @@
 # 初期コマンド
 
 ## rails newの段階でgit flow initをする。
-
 ```
 $ git clone ~~~~~
 $ bundle init　＃Gemfileのインストール
@@ -21,4 +20,18 @@ $ git flow feature start 01_~~~~~~~ #ブランチの作成。
 $ brew install git-flow #インストールが必要な場合(mac)
 ```
 
+```ruby
+config/application.rb
+module InstaClone
+  class Application < Rails::Application
+    # Initialize configuration defaults for originally generated Rails version.
+    config.load_defaults 5.2
 
+    config.generators do |g|
+      g.assets false
+      g.test_framework false
+      g.skip_routes true
+  end
+end
+```
+* generateコマンド時にassetsファイル、testファイル、routes.rbを自動生成させない。
